@@ -1,0 +1,1 @@
+# dbt-database-adapter-scaffold

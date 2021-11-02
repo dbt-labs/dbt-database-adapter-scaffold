@@ -1,0 +1,1 @@
+{{cookiecutter.dbt_version}}

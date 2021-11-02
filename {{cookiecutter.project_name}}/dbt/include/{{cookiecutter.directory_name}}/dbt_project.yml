@@ -1,0 +1,5 @@
+name: dbt_{{ cookiecutter.adapter }}
+version: {{cookiecutter.project_version}}
+config-version: 2
+
+macro-paths: ["macros"]

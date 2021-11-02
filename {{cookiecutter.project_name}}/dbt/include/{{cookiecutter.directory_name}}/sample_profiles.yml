@@ -1,0 +1,13 @@
+default:
+  outputs:
+    dev:
+      type: {{cookiecutter.adapter}}
+      # Add sample credentials here, like:
+      # host: <host>
+      # port: <port_num>
+      # username: <user>
+      # password: <pass>
+  target: dev
+
+  # find out if there are any other inputs we would, 
+  # like to ask for in the cookiecutter.json to fill out this page more

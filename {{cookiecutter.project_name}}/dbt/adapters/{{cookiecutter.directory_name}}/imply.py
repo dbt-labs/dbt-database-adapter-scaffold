@@ -12,7 +12,3 @@ class {{cookiecutter.adapter_title}}Adapter({{cookiecutter.adapter_cls}}):
         return 'datenow()'
 
  # may require more build out to make more user friendly to confer with team and community.
-
-
-#  "adapter_cls":["SQLAdapter","BaseAdapter"],
-#  "connection_cls":["SQLConnectionManager","BaseConnectionManager"],

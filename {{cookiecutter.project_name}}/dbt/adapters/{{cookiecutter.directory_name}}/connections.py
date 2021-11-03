@@ -5,6 +5,7 @@ from dbt.adapters.base import Credentials
 from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
 from dbt.logger import GLOBAL_LOGGER as logger
 
+# 
 
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
@@ -35,46 +36,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
 class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_cls}}):
     TYPE = '{{cookiecutter.adapter}}'
 
-    @contextmanager
-    def exception_handler(self,sql: str):
-        try:
-            yield
-        except:
-            pass
-        except:
-             pass
-
-    @classmethod
-    def open(cls,connection):
-        if connection.state == 'open':
-            logger.debug('connection is already open, skipping open.')
-            return connection
-        
-        credentials = connection.credentials
-
-        try:
-            handle = {{cookiecutter.adapter}}_library(
-                host=credentials.host,
-                port=credentials.port,
-                username=credentials.username,
-                password=credentials.password,
-            )
-            connection.state = 'open'
-            connection.handle = handle
-        except {{cookiecutter.adapter}}_library.Error as e:
-            logger.debug('Got an error when attempting to open {{cookiecutter.adapter}}')
-            connection.handle = None
-            connection.state = 'fail'
-            
-        return connection
-
-    @classmethod
-    def get_response(cls,cursor):
-        return cursor.status_message
     
-
-    def cancel(self, connection):
-        pass
 
 
    

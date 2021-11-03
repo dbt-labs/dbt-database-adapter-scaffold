@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 from dataclasses import dataclass
+import dbt.exceptions
 from dbt.adapters.base import Credentials
 from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
 from dbt.logger import GLOBAL_LOGGER as logger

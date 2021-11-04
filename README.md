@@ -7,7 +7,7 @@
 dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-aggregate the raw data in your warehouse so that it's ready for analysis.
 
 ## dbt-database-adapter-scaffold
-The `dbt-database-adapter-scaffold` package is a user-friendly interactive way to build out a new adapter that we nor the community have taken into account yet.
+The `dbt-database-adapter-scaffold` package is a user-friendly interactive way to build out a new adapter.
 
 ## Getting started
 

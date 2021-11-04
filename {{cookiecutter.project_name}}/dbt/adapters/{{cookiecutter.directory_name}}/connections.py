@@ -31,49 +31,62 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
     def _connection_keys(self):
         return ('host','port','username','user')
 
-# add kwargs propperly to the correct spots from create.py ex connection_cls = SQLConnectionManager
 class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_cls}}):
     TYPE = '{{cookiecutter.adapter}}'
 
     @contextmanager
-    def exception_handler(self,sql: str):
-        try:
-            yield
-        except:
-            pass
-        except:
-             pass
+    def exception_handler(self, sql: str):
+        # ## Example ##
+        # try:
+        #     yield
+        # except myadapter_library.DatabaseError as exc:
+        #     self.release(connection_name)
+
+        #     logger.debug('myadapter error: {}'.format(str(e)))
+        #     raise dbt.exceptions.DatabaseException(str(exc))
+        # except Exception as exc:
+        #     logger.debug("Error running SQL: {}".format(sql))
+        #     logger.debug("Rolling back transaction.")
+        #     self.release(connection_name)
+        #     raise dbt.exceptions.RuntimeException(str(exc))
+        pass
 
     @classmethod
-    def open(cls,connection):
-        if connection.state == 'open':
-            logger.debug('connection is already open, skipping open.')
-            return connection
-        
-        credentials = connection.credentials
+    def open(cls, connection):
+        # ## Example ##
+        # if connection.state == 'open':
+        #     logger.debug('Connection is already open, skipping open.')
+        #     return connection
 
-        try:
-            handle = {{cookiecutter.adapter}}_library(
-                host=credentials.host,
-                port=credentials.port,
-                username=credentials.username,
-                password=credentials.password,
-            )
-            connection.state = 'open'
-            connection.handle = handle
-        except {{cookiecutter.adapter}}_library.Error as e:
-            logger.debug('Got an error when attempting to open {{cookiecutter.adapter}}')
-            connection.handle = None
-            connection.state = 'fail'
-            
-        return connection
+        # credentials = connection.credentials
+
+        # try:
+        #     handle = myadapter_library.connect(
+        #         host=credentials.host,
+        #         port=credentials.port,
+        #         username=credentials.username,
+        #         password=credentials.password,
+        #         catalog=credentials.database
+        #     )
+        #     connection.state = 'open'
+        #     connection.handle = handle
+        # return connection
+        pass
 
     @classmethod
     def get_response(cls,cursor):
-        return cursor.status_message
+        # ## Example ##
+        # return cursor.status_message
+        pass
     
-
     def cancel(self, connection):
+        # ## Example ##
+        # tid = connection.handle.transaction_id()
+        # sql = 'select cancel_transaction({})'.format(tid)
+        # logger.debug("Cancelling query '{}' ({})".format(connection_name, pid))
+        # _, cursor = self.add_query(sql, 'master')
+        # res = cursor.fetchone()
+        # logger.debug("Canceled query '{}': {}".format(connection_name, res))
         pass
 
 

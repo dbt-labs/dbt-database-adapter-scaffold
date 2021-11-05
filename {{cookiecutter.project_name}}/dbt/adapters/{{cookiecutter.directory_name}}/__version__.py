@@ -1,1 +1,1 @@
-{{cookiecutter.dbt_version}}
+version = '{{cookiecutter.dbt_version}}'

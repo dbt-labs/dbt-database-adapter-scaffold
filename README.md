@@ -23,7 +23,7 @@ Testing for adapter connection capablilities
 
 Once your adapter is built out a few options. 
 - you can use `dbt debug` to troubleshoot issues with macros
-- [Jaffle_shop] (https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
+- [Jaffle_shop](https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
 
 
 ## Join the dbt Community

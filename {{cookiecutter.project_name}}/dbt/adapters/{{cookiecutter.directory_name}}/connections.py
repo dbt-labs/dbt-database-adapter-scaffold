@@ -28,6 +28,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
 
     @property
     def type(self):
+        '''Return name of adapter.'''
         return '{{cookiecutter.adapter}}'
 
     @property

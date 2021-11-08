@@ -12,7 +12,8 @@
     */
 
     /*
-    select {{database}} as TABLE,
+    {% raw %}
+      select {{database}} as TABLE,
         "- set table type -"
              when 'v' then 'VIEW'
               else 'BASE TABLE'
@@ -22,13 +23,14 @@
 
       where (
         search if schema exists, else build
-          {% raw %}
+          
           {%- for schema in schemas -%}
             upper(sch.nspname) = upper('{{ schema }}'){%- if not loop.last %} or {% endif -%}
           {%- endfor -%}
-          {% endraw %}
+          
       )
       define any shortcut keys
+    {% endraw %}
     */
   {{ '{{{{ exceptions.raise_compiler_error(msg) }}}}' }}
  {{'{{%'}} endmacro {{'{{%'}}

@@ -4,6 +4,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 
 {{'{%'}} macro {{cookiecutter.adapter}}__alter_column_type(relation,column_name,new_column_type) {{ '-%}' }}
+'''Changes column name or data type'''
 /*
     1. Create a new column (w/ temp name and correct type)
     2. Copy data over to it
@@ -13,6 +14,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {{'{%'}} endmacro {{ '%}' }}
 
 {{'{%'}} macro {{cookiecutter.adapter}}__check_schema_exists(information_schema,schema) {{ '-%}' }}
+'''Checks if schema name exists and returns number or times it shows up.'''
 /*
     1. Check if schemas exist
     2. verify database connection
@@ -37,6 +39,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 
 {{'{%'}} macro {{cookiecutter.adapter}}__create_schema(relation) {{ '-%}' }}
+'''Creates a new schema in the  target database, if schema already exists, method is a no-op. '''
 {{'{%'}} endmacro {{ '%}' }}
 
 /*
@@ -53,6 +56,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 
 {{'{%'}} macro {{cookiecutter.adapter}}__drop_relation(relation) {{ '-%}' }}
+'''Deletes relatonship identifer between tables.'''
 /*
   1. If database exists
   2. Verify connection
@@ -61,6 +65,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {{'{%'}} endmacro {{ '%}' }}
 
 {{'{%'}} macro {{cookiecutter.adapter}}__drop_schema(relation) {{ '-%}' }}
+'''drops a schema in a target database.'''
 /*
   1. If database exists
   2. werify database
@@ -95,6 +100,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 
 
 {{'{%'}} macro {{cookiecutter.adapter}}__get_columns_in_relation(relation) {{ '-%}' }}
+'''Returns a list of Columns in a table.'''
 /*
   1. select as many values from column as needed
   2. search relations to columns
@@ -134,9 +140,11 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 
 {{'{%'}} macro {{cookiecutter.adapter}}__list_relations_without_caching(schema_relation) {{ '-%}' }}
+'''creates a table of relations withough using local caching.'''
 {{'{%'}} endmacro {{ '%}' }}
 
 {{'{%'}} macro {{cookiecutter.adapter}}__list_schemas(database) {{ '-%}' }}
+'''Returns a table of unique schemas.'''
 /*
   1. Verify database
   2. search schemea by specific name
@@ -145,6 +153,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {{'{%'}} endmacro {{ '%}' }}
 
 {{'{%'}} macro {{cookiecutter.adapter}}__rename_relation(from_relation, to_relation) {{ '-%}' }}
+'''Renames a relation in the database.'''
 /*
   1. Search for a specific relation name
   2. alter table by targeting specific name and passing in new name
@@ -152,6 +161,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {{'{%'}} endmacro {{ '%}' }}
 
 {{'{%'}} macro {{cookiecutter.adapter}}__truncate_relation(relation) {{ '-%}' }}
+'''Removes all rows from a targeted set of tables.'''
 /*
   1. grab all tables tied to the relation
   2. remove rows from relations

@@ -11,6 +11,24 @@
       As an example, below is a simplified version of postgres__get_catalog
     */
 
+    /*
+    select {{database}} as TABLE,
+        "- set table type -"
+             when 'v' then 'VIEW'
+              else 'BASE TABLE'
+        "- set table/view names and descriptions -" 
 
+      use several joins and search types for pulling info together, sorting etc..
+
+      where (
+        search if schema exists, else build
+          {% raw %}
+          {%- for schema in schemas -%}
+            upper(sch.nspname) = upper('{{ schema }}'){%- if not loop.last %} or {% endif -%}
+          {%- endfor -%}
+          {% endraw %}
+      )
+      define any shortcut keys
+    */
   {{ '{{{{ exceptions.raise_compiler_error(msg) }}}}' }}
  {{'{{%'}} endmacro {{'{{%'}}

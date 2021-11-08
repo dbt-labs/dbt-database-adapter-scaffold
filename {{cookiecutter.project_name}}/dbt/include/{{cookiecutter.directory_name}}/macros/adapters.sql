@@ -179,5 +179,6 @@ Example 3 of 3 of required macros that does not have a default implementation.
 */
 
 {{'{%'}} macro {{cookiecutter.adapter}}__current_timestamp() {{ '-%}' }}
+'''Returns current UTC time'''
 {{'{#'}} docs show not to be implemented currently. {{'#}'}}
 {{'{%'}} endmacro {{ '%}' }}

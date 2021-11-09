@@ -17,8 +17,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 '''Checks if schema name exists and returns number or times it shows up.'''
 /*
     1. Check if schemas exist
-    2. verify database connection
-    3. return number of rows or columns that match searched parameter
+    2. return number of rows or columns that match searched parameter
 */
 {{'{%'}} endmacro {{ '%}' }}
 
@@ -59,8 +58,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 '''Deletes relatonship identifer between tables.'''
 /*
   1. If database exists
-  2. Verify connection
-  3. Create a new schema if passed schema does not exist already
+  2. Create a new schema if passed schema does not exist already
 */
 {{'{%'}} endmacro {{ '%}' }}
 
@@ -68,8 +66,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 '''drops a schema in a target database.'''
 /*
   1. If database exists
-  2. werify database
-  3. search all calls of schema, and change include value to False, cascade it to backtrack
+  2. search all calls of schema, and change include value to False, cascade it to backtrack
 */
 {{'{%'}} endmacro {{ '%}' }}
 
@@ -146,9 +143,8 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {{'{%'}} macro {{cookiecutter.adapter}}__list_schemas(database) {{ '-%}' }}
 '''Returns a table of unique schemas.'''
 /*
-  1. Verify database
-  2. search schemea by specific name
-  3. create a table with names
+  1. search schemea by specific name
+  2. create a table with names
 */
 {{'{%'}} endmacro {{ '%}' }}
 

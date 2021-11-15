@@ -11,10 +11,16 @@ The `dbt-database-adapter-scaffold` package is a user-friendly interactive way t
 
 ## Getting started
 
-- [Install dbt](https://docs.getdbt.com/docs/installation)
+#### Running from Github
+- [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+- run `cookiecutter gh:dbt-labs/dbt-database-adapter-scaffold` in console
+
+#### Running Locally
 - [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 - Fork and clone this repo
 - Once cloned run cookiecutter path_to_this_file/..
+
+#### Generally
 - read the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter) around building a new adapter and follow helpful tips within generated project to build out your new adapter.
 
 ## Testing

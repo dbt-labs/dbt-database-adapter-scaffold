@@ -45,7 +45,6 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
         """
         return ('host','port','username','user')
 
-# add kwargs propperly to the correct spots from create.py ex connection_cls = SQLConnectionManager
 class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_cls}}):
     TYPE = '{{cookiecutter.adapter}}'
 

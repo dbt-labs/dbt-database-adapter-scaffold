@@ -18,7 +18,6 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 - Lack of pointers to what offical documentation we do have.
 
 ## Options
-
 - Pull out current script, and move it to a new repo by itself
   - lots of template strings difficult to parse
 - use Scaffolding tool

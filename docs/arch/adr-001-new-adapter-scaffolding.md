@@ -5,7 +5,7 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 
 ### known issues or possible improvements to be made
 - Updating script to generate a new adapter plugin is tricky, must edit numerous template strings in python code, difficult to test and search for all areas changes are needed.
-- Not an interactive experience, must know and pass all required arguments to the .py file
+- Not an interactive experience, must know and pass all required arguments to the .py file `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
 - stuck with defaults, or missing dbt suggested default dependencies
   - Options to set up Github Actions
   - flake8 by default for linting to match other adapters

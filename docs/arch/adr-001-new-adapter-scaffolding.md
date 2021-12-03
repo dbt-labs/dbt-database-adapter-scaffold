@@ -4,8 +4,8 @@
 Currently we offer the ability for users and datawarehouses to build vendor/community supported adapter plugins via the [`create_adapter_plugins.py`](https://github.com/dbt-labs/dbt/blob/47033c459f2c835d81cc845d49ef23e7d19736b6/core/scripts/create_adapter_plugins.py) file. While this file is able to produce a usable adapter plugin, it is not the most user friendly experience as we have noted over time and needed to be updated.
 
 ### known issues or possible improvements to be made
-- Updating script to generate a new adapter plugin is tricky, must edit numerous template strings in python code, difficult to test and search for all areas changes are needed.
-- Not an interactive experience, must know and pass all required arguments to the .py file `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
+- Updating script to generate a new adapter plugin is tricky, must edit numerous template strings in python code, difficult to test and search for all areas changes are needed. ex. `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
+- Not an interactive experience, must know and pass all required arguments to the .py file 
 - stuck with defaults, or missing dbt suggested default dependencies
   - Options to set up Github Actions
   - flake8 by default for linting to match other adapters

@@ -39,6 +39,15 @@ Firstly after looking at available tooling, we landed on using `cookiecutter` to
 
 Secondly we looked at our current `dbt-docs` to see what things we specifically require users to build out for adapters to work ex. (class methods for connection, macros.) and added starting stubs to the files along with docstrings declaring their purpose, examples from other adapters, pointers in comments to documentation.
 
+## Remaining tasks
+Project things left to do
+- Demo and feedback, cleanup.
+- Fully test versioning and merger into core repo.
+- Make. Sure naming conventions for variables are what we want. (As easy for new users to understand meaning as possible)
+- Github Action tests? (Flake8).
+- Making sure we have all packages we need, and finalizing if we want any other optionals added ex. Mypy.
+- Any other testing ideas we might have.
+
 
 ## Status
 

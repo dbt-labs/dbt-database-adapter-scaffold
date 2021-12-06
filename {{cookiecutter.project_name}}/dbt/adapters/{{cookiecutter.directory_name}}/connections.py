@@ -5,8 +5,6 @@ from dbt.adapters.base import Credentials
 from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
 from dbt.logger import GLOBAL_LOGGER as logger
 
-# 
-
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
     '''

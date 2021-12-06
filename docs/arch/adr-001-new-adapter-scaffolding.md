@@ -35,6 +35,15 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 ## Decision
 After looking at available tooling, we have decided to use `cookiecutter` parsed through .py and generated "adapter" base file from current process and pulled out any information we would need to keep, built out the `cookiecutter.json` based variables that were built by running the .py variables and put them in way to augment things like adapter name to fit into correct place, assign correct ConnectionManager classes based on certain choices, applied file sturcture and dependency list for things dbt wants to suggest be used (ex. tox, flake8,etc.), once base file structure was built out I grabbed examples of the macros that do not have a default version and provided them as a context to be looked at, built out base steps of what all other macros do in general terms to help users make any changes to default action needed, created general docstrings for classes based on offical documentation and implementation.
 
+## Remaining tasks
+Project things left to do
+- Demo and feedback, cleanup.
+- Fully test versioning and merger into core repo.
+- Make. Sure naming conventions for variables are what we want. (As easy for new users to understand meaning as possible)
+- Github Action tests? (Flake8).
+- Making sure we have all packages we need, and finalizing if we want any other optionals added ex. Mypy.
+- Any other testing ideas we might have.
+
 
 ## Status
 proposed

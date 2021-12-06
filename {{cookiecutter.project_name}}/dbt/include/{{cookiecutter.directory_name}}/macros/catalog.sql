@@ -1,7 +1,7 @@
- {{'{{%'}} macro {{cookiecutter.adapter}}__get_catalog(information_schema, schemas){{ '-%}}' }}
+ {{'{{%'}} macro {{cookiecutter.directory_name}}__get_catalog(information_schema, schemas){{ '-%}}' }}
 
    {{'{{%'}}set msg {{ '-%}}' }}
-    get_catalog not implemented for {{cookiecutter.adapter}}
+    get_catalog not implemented for {{cookiecutter.directory_name}}
    {{ '-%}}' }} endset {{'{{%'}}
     /*
       Your database likely has a way of accessing metadata about its objects,

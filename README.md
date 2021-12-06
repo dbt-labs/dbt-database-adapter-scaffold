@@ -45,3 +45,8 @@ Once your adapter is built out a few options.
 ## Code of Conduct
 
 Everyone interacting in the dbt project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [dbt Code of Conduct](https://community.getdbt.com/code-of-conduct).
+
+
+<!-- "directory_name": "{{cookiecutter.adapter_name.lower().replace(' ','')}}",
+"adapter_title": "{{ cookiecutter.adapter_name.title().replace(' ', '')}}",
+"adapter":"{{ cookiecutter.directory_name}}", -->

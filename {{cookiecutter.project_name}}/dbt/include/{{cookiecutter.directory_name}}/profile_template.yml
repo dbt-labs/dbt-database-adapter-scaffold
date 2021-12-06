@@ -1,5 +1,5 @@
 fixed:
-  type: {{cookiecutter.adapter}}
+  type: {{cookiecutter.directory_name}}
 prompts:
   host:
     hint: 'your host name'

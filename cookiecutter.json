@@ -6,9 +6,9 @@
   "author": "<INSERT AUTHOR HERE>",
   "author_email": "<INSERT EMAIL HERE>",
   "url":"",
+  "description": "the {{ cookiecutter.directory_name }} adapter plugin for dbt.",
   "project_version":"1.0.0", 
   "dbt_version":"1.0.0b1",
-  "package_name":"dbt-{{cookiecutter.directory_name}}",
-  "description": "the {{ cookiecutter.directory_name }} adapter plugin for dbt."
+  "package_name":"dbt-{{cookiecutter.directory_name}}"
 }
 

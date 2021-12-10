@@ -6,7 +6,7 @@ from cookiecutter.utils import rmtree
 @contextmanager
 def bake_in_temp_dir(cookies, *args, **kwargs):
     extra_context = kwargs.setdefault('extra_context', {})
-    extra_context.setdefault('adapter_name', 'my project')
+    extra_context.setdefault('adapter_name', 'helloworld')
     result = cookies.bake(*args, **kwargs)
     try:
         yield result
@@ -43,11 +43,11 @@ def test_bake_project_fail(cookies):
     assert 'test' in found_toplevel_files
 
 def test_without_internationalization(cookies):
+    """test that a directory d oes not exist deeply in generated project."""
     with bake_in_temp_dir(
         cookies,
-        extra_context={'use_i18n': 'No'}
     ) as result:
-        assert result.project_path.joinpath('dbt/adapters').is_dir()
+        assert result.project_path.joinpath('dbt/adapters/hello').is_dir() is False
 
 
 

@@ -8,7 +8,7 @@
   "url":"",
   "description": "the {{ cookiecutter.directory_name }} adapter plugin for dbt.",
   "project_version":"1.0.0", 
-  "dbt_version":"1.0.0b1",
+  "dbt_version":"1.0.0",
   "package_name":"dbt-{{cookiecutter.directory_name}}"
 }
 

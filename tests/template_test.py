@@ -1,8 +1,6 @@
 import re
 from contextlib import contextmanager
 from cookiecutter.utils import rmtree
-from cookiecutter.hooks import run_script_with_context
-
 
 @contextmanager
 def bake_in_temp_dir(cookies, *args, **kwargs):
@@ -53,7 +51,6 @@ def test_bake_adapter_src_base(cookies):
         assert result.exception is None
         assert result.context['adapter_src'] == 'base'
         assert result.context['adapter_src'] != 'sql'
-
 
 def test_bake_author_default(cookies):
     with bake_in_temp_dir(cookies) as result:

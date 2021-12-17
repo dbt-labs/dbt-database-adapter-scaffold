@@ -3,7 +3,7 @@ postgres adapter macros: https://github.com/dbt-labs/dbt-core/blob/main/plugins/
 dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 
-{{'{%'}} macro {{cookiecutter.adapter}}__alter_column_type(relation,column_name,new_column_type) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__alter_column_type(relation,column_name,new_column_type) {{ '-%}' }}
 '''Changes column name or data type'''
 /*
     1. Create a new column (w/ temp name and correct type)
@@ -13,7 +13,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 {{'{%'}} endmacro {{ '%}' }}
 
-{{'{%'}} macro {{cookiecutter.adapter}}__check_schema_exists(information_schema,schema) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__check_schema_exists(information_schema,schema) {{ '-%}' }}
 '''Checks if schema name exists and returns number or times it shows up.'''
 /*
     1. Check if schemas exist
@@ -37,7 +37,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
  {% endraw %}
 */
 
-{{'{%'}} macro {{cookiecutter.adapter}}__create_schema(relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__create_schema(relation) {{ '-%}' }}
 '''Creates a new schema in the  target database, if schema already exists, method is a no-op. '''
 {{'{%'}} endmacro {{ '%}' }}
 
@@ -54,7 +54,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {% endraw %}
 */
 
-{{'{%'}} macro {{cookiecutter.adapter}}__drop_relation(relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__drop_relation(relation) {{ '-%}' }}
 '''Deletes relatonship identifer between tables.'''
 /*
   1. If database exists
@@ -62,7 +62,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 {{'{%'}} endmacro {{ '%}' }}
 
-{{'{%'}} macro {{cookiecutter.adapter}}__drop_schema(relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__drop_schema(relation) {{ '-%}' }}
 '''drops a schema in a target database.'''
 /*
   1. If database exists
@@ -96,7 +96,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {% endraw %}*/
 
 
-{{'{%'}} macro {{cookiecutter.adapter}}__get_columns_in_relation(relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__get_columns_in_relation(relation) {{ '-%}' }}
 '''Returns a list of Columns in a table.'''
 /*
   1. select as many values from column as needed
@@ -136,11 +136,11 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 {% endraw %}
 */
 
-{{'{%'}} macro {{cookiecutter.adapter}}__list_relations_without_caching(schema_relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__list_relations_without_caching(schema_relation) {{ '-%}' }}
 '''creates a table of relations withough using local caching.'''
 {{'{%'}} endmacro {{ '%}' }}
 
-{{'{%'}} macro {{cookiecutter.adapter}}__list_schemas(database) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__list_schemas(database) {{ '-%}' }}
 '''Returns a table of unique schemas.'''
 /*
   1. search schemea by specific name
@@ -148,7 +148,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 {{'{%'}} endmacro {{ '%}' }}
 
-{{'{%'}} macro {{cookiecutter.adapter}}__rename_relation(from_relation, to_relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__rename_relation(from_relation, to_relation) {{ '-%}' }}
 '''Renames a relation in the database.'''
 /*
   1. Search for a specific relation name
@@ -156,7 +156,7 @@ dbt docs: https://docs.getdbt.com/docs/contributing/building-a-new-adapter
 */
 {{'{%'}} endmacro {{ '%}' }}
 
-{{'{%'}} macro {{cookiecutter.adapter}}__truncate_relation(relation) {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__truncate_relation(relation) {{ '-%}' }}
 '''Removes all rows from a targeted set of tables.'''
 /*
   1. grab all tables tied to the relation
@@ -174,7 +174,7 @@ Example 3 of 3 of required macros that does not have a default implementation.
 {% endraw %}
 */
 
-{{'{%'}} macro {{cookiecutter.adapter}}__current_timestamp() {{ '-%}' }}
+{{'{%'}} macro {{cookiecutter.directory_name}}__current_timestamp() {{ '-%}' }}
 '''Returns current UTC time'''
 {{'{#'}} docs show not to be implemented currently. {{'#}'}}
 {{'{%'}} endmacro {{ '%}' }}

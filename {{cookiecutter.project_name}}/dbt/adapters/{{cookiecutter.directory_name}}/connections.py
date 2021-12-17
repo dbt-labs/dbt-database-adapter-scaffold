@@ -5,8 +5,6 @@ from dbt.adapters.base import Credentials
 from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
 from dbt.logger import GLOBAL_LOGGER as logger
 
-# 
-
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
     '''
@@ -29,7 +27,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
     @property
     def type(self):
         '''Return name of adapter.'''
-        return '{{cookiecutter.adapter}}'
+        return '{{cookiecutter.directory_name}}'
 
     @property
     def unique_field(self):
@@ -46,7 +44,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
         return ('host','port','username','user')
 
 class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_cls}}):
-    TYPE = '{{cookiecutter.adapter}}'
+    TYPE = '{{cookiecutter.directory_name}}'
 
 
     @contextmanager

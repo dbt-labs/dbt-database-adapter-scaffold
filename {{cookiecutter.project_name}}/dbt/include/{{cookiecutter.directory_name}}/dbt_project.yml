@@ -1,4 +1,4 @@
-name: dbt_{{ cookiecutter.adapter }}
+name: dbt_{{ cookiecutter.directory_name }}
 version: {{cookiecutter.project_version}}
 config-version: 2
 

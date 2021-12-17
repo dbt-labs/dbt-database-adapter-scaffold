@@ -2,7 +2,7 @@
 # for installation and use
 
 target:
-  type: {{cookiecutter.adapter}}
+  type: {{cookiecutter.directory_name}}
   # Add CI credentials here, like:
   # host: localhost
   # port: 5432

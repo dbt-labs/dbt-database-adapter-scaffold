@@ -5,8 +5,7 @@
 Currently we offer the ability for users and datawarehouses to build vendor/community supported adapter plugins via the [`create_adapter_plugins.py`](https://github.com/dbt-labs/dbt/blob/47033c459f2c835d81cc845d49ef23e7d19736b6/core/scripts/create_adapter_plugins.py) file. While this file is able to produce a usable adapter plugin, it is not the most user friendly experience as we have noted over time and needed to be updated.
 
 ### known issues or possible improvements to be made
-
-- Updating the script to generate a new adapter plugin is tricky. You must edit numerous template strings in python code, which makes it difficult to test and search for all instances that need to be updated. ex. `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
+- Updating the script to generate a new adapter plugin is tricky. Numerous template strings must be edited in the python code, which makes it difficult to test and search for all areas that need to be changed. ex. `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
 - Not an interactive experience, must know and pass all required arguments to the .py file 
 - stuck with defaults, or missing dbt suggested default dependencies
   - Options to set up Github Actions
@@ -18,7 +17,6 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 - Lack of pointers to what offical documentation we do have.
 
 ## Options
-
 - Pull out current script, and move it to a new repo by itself
   - lots of template strings difficult to parse
 - use Scaffolding tool
@@ -40,6 +38,15 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 Firstly after looking at available tooling, we landed on using `cookiecutter` to aid in creating a interactive scaffolding session for users quickily generate a starting point to build out their adapter plugin by quickly building out variable names, giving choice selections for things like `adapter_src` which is how we let the program know which connection methods to pull in from `dbt-core`. This also meant we could keep much of the structure for the files the same from previous adapter generator by having the files exist in the starting state and just passing the user passed parameters on generation. 
 
 Secondly we looked at our current `dbt-docs` to see what things we specifically require users to build out for adapters to work ex. (class methods for connection, macros.) and added starting stubs to the files along with docstrings declaring their purpose, examples from other adapters, pointers in comments to documentation.
+
+## Remaining tasks
+Project things left to do
+- Demo and feedback, cleanup.
+- Fully test versioning and merger into core repo.
+- Make. Sure naming conventions for variables are what we want. (As easy for new users to understand meaning as possible)
+- Github Action tests? (Flake8).
+- Making sure we have all packages we need, and finalizing if we want any other optionals added ex. Mypy.
+- Any other testing ideas we might have.
 
 
 ## Status

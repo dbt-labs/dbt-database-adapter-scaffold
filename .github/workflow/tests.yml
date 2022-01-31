@@ -1,0 +1,59 @@
+name: Tests and Cookiecutter Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permission: read-all
+
+defaults:
+  run:
+    shell: bash
+
+
+jobs:
+
+  tests:
+
+    name: tests / python ${{ matrix.python-version }}
+
+    runs-on: ubuntu-latest
+
+    strategy:
+        fail-fast: false
+        matrix:
+          python-version: [3.7, 3.8, 3.9]
+
+    env:
+      PYTEST_ADOPTS: "-v --color=yes --csv test_results.csv"
+
+    steps:
+      - name: check out the repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ maxtrix.python-version }}
+
+      - name: Install python dependencies
+        run: |
+          pip install --user --upgrade pip
+          pip --version
+
+      - name: Get current date
+        if: always()
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H_%M_%S')" #no colons allowed for artifacts
+
+      -uses: actions/upload-artifcats@v2
+      if: always()
+      with:
+        name: test_results_${{ matrix.python-version }}-${{ steps.date.outputs.date }}.csv
+        path: test_results.csv
+
+      
+      

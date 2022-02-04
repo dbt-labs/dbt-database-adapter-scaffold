@@ -26,7 +26,7 @@ jobs:
           python-version: [3.7, 3.8, 3.9]
 
     env:
-      PYTEST_ADOPTS: "-v --color=yes --csv test_results.csv"
+      PYTEST_ADDOPTS: "-vvv --color=yes"
 
     steps:
       - name: check out the repository
@@ -37,23 +37,14 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ maxtrix.python-version }}
+          python-version: ${{ matrix.python-version }}
 
       - name: Install python dependencies
         run: |
-          pip install --user --upgrade pip
-          pip --version
-
-      - name: Get current date
-        if: always()
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H_%M_%S')" #no colons allowed for artifacts
-
-      -uses: actions/upload-artifcats@v2
-      if: always()
-      with:
-        name: test_results_${{ matrix.python-version }}-${{ steps.date.outputs.date }}.csv
-        path: test_results.csv
-
+           pip install --user --upgrade pip
+           pip --version
+           pip install -r requirements.txt
       
-      
+      - name: Run tests
+        run:
+          python -m pytest -s

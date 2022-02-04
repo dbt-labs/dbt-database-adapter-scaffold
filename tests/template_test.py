@@ -20,6 +20,7 @@ def test_bake_project_default_adapter_name(cookies):
         assert result.project_path.is_dir()
         # looks for files in generated project
         found_toplevel_files = [f.name for f in result.project_path.glob('*')]
+        assert '.github' in found_toplevel_files
         assert  'dbt' in found_toplevel_files
         assert 'setup.py' in found_toplevel_files
         assert 'tox.ini' in found_toplevel_files

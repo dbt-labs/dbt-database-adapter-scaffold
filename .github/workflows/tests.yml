@@ -21,7 +21,7 @@ jobs:
           python-version: [3.7, 3.8, 3.9]
 
     env:
-      PYTEST_ADDOPTS: "-vvv --color=yes"
+      PYTEST_ADDOPTS: "-v --color=yes"
 
     steps:
       - name: check out the repository
@@ -42,4 +42,4 @@ jobs:
       
       - name: Run tests
         run:
-          python -m pytest -s
+          python -m pytest

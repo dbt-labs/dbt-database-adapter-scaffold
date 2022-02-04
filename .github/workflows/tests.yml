@@ -2,15 +2,10 @@ name: Tests and Cookiecutter Checks
 
 on:
   push:
+    branches:
+      - main
   pull_request:
   workflow_dispatch:
-
-permission: read-all
-
-defaults:
-  run:
-    shell: bash
-
 
 jobs:
 

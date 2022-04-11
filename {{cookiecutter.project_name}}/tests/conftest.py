@@ -11,3 +11,14 @@ pytest_plugins = ["dbt.tests.fixtures.project"]
 @pytest.fixture(scope="class")
 def dbt_profile_target():
     pass
+
+    '''
+    example of what return object might look like
+
+    {
+      type: {{cookiecutter.adapter_name}}
+      user:
+      database:
+      etc..
+    }
+    '''

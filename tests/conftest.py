@@ -1,1 +1,0 @@
-pytest_plugins = ["{{cookiecuter.project_name}}.dbt.tests.fixtures.project"]

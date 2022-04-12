@@ -1,24 +1,26 @@
-import pytest
-import os
-import json
+# Un comment and create your fixture for python test
 
-# Import the fuctional fixtures as a plugin
-# Note: fixtures with session scope need to be local
+# import pytest
+# import os
+# import json
 
-pytest_plugins = ["dbt.tests.fixtures.project"]
+# # Import the fuctional fixtures as a plugin
+# # Note: fixtures with session scope need to be local
 
-# The profile dictionary, used to write out profiles.yml
-@pytest.fixture(scope="class")
-def dbt_profile_target():
-    pass
+# pytest_plugins = ["dbt.tests.fixtures.project"]
 
-    '''
-    example of what return object might look like
+# # The profile dictionary, used to write out profiles.yml
+# @pytest.fixture(scope="class")
+# def dbt_profile_target():
+#     pass
 
-    {
-      type: {{cookiecutter.adapter_name}}
-      user:
-      database:
-      etc..
-    }
-    '''
+#     '''
+#     example of what return object might look like
+
+#     {
+#       type: {{cookiecutter.adapter_name}}
+#       user:
+#       database:
+#       etc..
+#     }
+#     '''

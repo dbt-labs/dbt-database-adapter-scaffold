@@ -35,7 +35,7 @@ def test_bake_direcotry_name(cookies):
         assert result.context["directory_name"] != "hello_world"
 
 def test_bake_deafult_adapter_src(cookies):
-    '''bake and test default version of adapter_src is sql'''
+    """bake and test default version of adapter_src is sql"""
     with bake_in_temp_dir(cookies) as result:
         assert result.exit_code == 0
         assert result.exception is None
@@ -45,7 +45,7 @@ def test_bake_deafult_adapter_src(cookies):
         assert result.context["adapter_src"] != "2"
 
 def test_bake_adapter_src_base(cookies):
-    '''bake and test adapter_src can register change from sql to base'''
+    """bake and test adapter_src can register change from sql to base"""
     with bake_in_temp_dir(cookies,extra_context={"adapter_src": "base"}) as result:
         assert result.exit_code == 0
         assert result.exception is None

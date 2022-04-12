@@ -118,4 +118,3 @@ class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_
         # res = cursor.fetchone()
         # logger.debug("Canceled query '{}': {}".format(connection_name, res))
         pass
-

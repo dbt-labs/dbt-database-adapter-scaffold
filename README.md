@@ -25,9 +25,9 @@ The `dbt-database-adapter-scaffold` package is a user-friendly interactive way t
 
 ## Testing
 Testing for adapter connection capablilities
-- Please use the `dbt-adapter-tests` these are best for troubleshootting connection and common functionality. 
+- Please use the `dbt-adapter-tests` these are best for troubleshootting connection and common functionality.
 
-Once your adapter is built out a few options. 
+Once your adapter is built out a few options.
 - you can use `dbt debug` to troubleshoot issues with macros
 - [Jaffle_shop](https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
 
@@ -45,4 +45,3 @@ Once your adapter is built out a few options.
 ## Code of Conduct
 
 Everyone interacting in the dbt project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [dbt Code of Conduct](https://community.getdbt.com/code-of-conduct).
-

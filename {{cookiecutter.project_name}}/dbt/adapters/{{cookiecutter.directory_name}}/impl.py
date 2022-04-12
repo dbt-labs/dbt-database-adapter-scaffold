@@ -8,7 +8,7 @@ class {{cookiecutter.adapter_title}}Adapter({{cookiecutter.adapter_cls}}):
     '''
     Controls actual implmentation of adapter, and ability to override certain methods.
     '''
-    
+
     ConnectionManager = {{cookiecutter.adapter_title}}ConnectionManager
 
     @classmethod

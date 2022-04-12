@@ -6,12 +6,12 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 
 ### known issues or possible improvements to be made
 - Updating the script to generate a new adapter plugin is tricky. Numerous template strings must be edited in the python code, which makes it difficult to test and search for all areas that need to be changed. ex. `$ python create_adapter_plugins.py --sql --title-case=MyAdapter ./ myadapter`
-- Not an interactive experience, must know and pass all required arguments to the .py file 
+- Not an interactive experience, must know and pass all required arguments to the .py file
 - stuck with defaults, or missing dbt suggested default dependencies
   - Options to set up Github Actions
   - flake8 by default for linting to match other adapters
   - mypy by default or optional for static type checking
-  - tox by default 
+  - tox by default
   - Ability to make a docker image by default
 - Lack of docstrings, examples, comments to help users undestand what needs to be built out.
 - Lack of pointers to what offical documentation we do have.
@@ -35,7 +35,7 @@ Currently we offer the ability for users and datawarehouses to build vendor/comm
 
 ## Decision
 
-Firstly after looking at available tooling, we landed on using `cookiecutter` to aid in creating a interactive scaffolding session for users quickily generate a starting point to build out their adapter plugin by quickly building out variable names, giving choice selections for things like `adapter_src` which is how we let the program know which connection methods to pull in from `dbt-core`. This also meant we could keep much of the structure for the files the same from previous adapter generator by having the files exist in the starting state and just passing the user passed parameters on generation. 
+Firstly after looking at available tooling, we landed on using `cookiecutter` to aid in creating a interactive scaffolding session for users quickily generate a starting point to build out their adapter plugin by quickly building out variable names, giving choice selections for things like `adapter_src` which is how we let the program know which connection methods to pull in from `dbt-core`. This also meant we could keep much of the structure for the files the same from previous adapter generator by having the files exist in the starting state and just passing the user passed parameters on generation.
 
 Secondly we looked at our current `dbt-docs` to see what things we specifically require users to build out for adapters to work ex. (class methods for connection, macros.) and added starting stubs to the files along with docstrings declaring their purpose, examples from other adapters, pointers in comments to documentation.
 

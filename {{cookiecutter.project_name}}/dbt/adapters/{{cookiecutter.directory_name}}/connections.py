@@ -8,10 +8,10 @@ from dbt.logger import GLOBAL_LOGGER as logger
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
     '''
-    Defines database specific credentials that get added to 
+    Defines database specific credentials that get added to
     profiles.yml to connect to new adapter
     '''
-    
+
     # Add credentials members here, like:
     # host: str
     # port: int
@@ -105,7 +105,7 @@ class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_
         # ## Example ##
         # return cursor.status_message
         pass
-    
+
     def cancel(self, connection):
         '''
         Gets a connection object and attempts to cancel any ongoing queries.
@@ -118,4 +118,4 @@ class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_
         # res = cursor.fetchone()
         # logger.debug("Canceled query '{}': {}".format(connection_name, res))
         pass
-   
+

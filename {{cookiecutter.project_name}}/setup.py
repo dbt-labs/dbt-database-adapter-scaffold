@@ -3,7 +3,7 @@ from setuptools import find_namespace_packages, setup
 
 package_name = "dbt-{{ cookiecutter.directory_name }}"
 # make sure this always matches dbt/adapters/{adapter}/__version__.py
-package_version = "{{cookiecutter.project_version}}" 
+package_version = "{{cookiecutter.project_version}}"
 description = """The {{ cookiecutter.directory_name }} adapter plugin for dbt"""
 
 setup(
@@ -13,10 +13,10 @@ setup(
     long_description=description,
     author="{{cookiecutter.author}}",
     author_email="{{cookiecutter.author_email}}",
-    url="{{cookiecutter.url}}", 
-    packages=find_namespace_packages(include=['dbt', 'dbt.*']),
+    url="{{cookiecutter.url}}",
+    packages=find_namespace_packages(include=["dbt", "dbt.*"]),
     include_package_data=True,
     install_requires=[
-        'dbt-core~={{cookiecutter.dbt_version}}.',
-    ]
+        "dbt-core~={{cookiecutter.dbt_version}}.",
+    ],
 )

@@ -1,2 +1,2 @@
 cookiecutter~=1.7.3
-pytest
+pytest-cookies~=0.6.1

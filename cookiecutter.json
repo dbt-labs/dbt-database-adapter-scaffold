@@ -1,6 +1,6 @@
 {
   "adapter_name": "My Adapter",
-  "directory_name": "{{cookiecutter.adapter_name.lower().replace(' ','')}}",
+  "directory_name": "{{cookiecutter.adapter_name.lower().replace(" ","")}}",
   "project_name": "dbt-{{cookiecutter.directory_name}}",
   "adapter_src": ["sql","base"],
   "author": "<INSERT AUTHOR HERE>",

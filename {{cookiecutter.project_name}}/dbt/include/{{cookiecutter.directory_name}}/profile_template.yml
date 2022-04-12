@@ -2,18 +2,18 @@ fixed:
   type: {{cookiecutter.directory_name}}
 prompts:
   host:
-    hint: 'your host name'
+    hint: "your host name"
   port:
     default: 5432
-    type: 'int'
+    type: "int"
   user:
-    hint: 'dev username'
+    hint: "dev username"
   password:
-    hint: 'dev password'
+    hint: "dev password"
     hide_input: true
   dbname:
-    hint: 'default database'
+    hint: "default database"
   threads:
-    hint: '1 or more'
-    type: 'int'
+    hint: "1 or more"
+    type: "int"
     default: 1

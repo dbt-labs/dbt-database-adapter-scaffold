@@ -19,12 +19,14 @@ def test_bake_project_default_adapter_name(cookies):
         assert result.context["adapter_name"] != "123444"
         assert result.project_path.is_dir()
         # looks for files in generated project
+
         found_toplevel_files = [f.name for f in result.project_path.glob("*")]
         assert ".github" in found_toplevel_files
         assert  "dbt" in found_toplevel_files
         assert "setup.py" in found_toplevel_files
         assert "tox.ini" in found_toplevel_files
-        assert "test" in found_toplevel_files
+        assert "tests" in found_toplevel_files
+
 
 def test_bake_direcotry_name(cookies):
     """bake and test against new words, if passes means its changing values in template"""

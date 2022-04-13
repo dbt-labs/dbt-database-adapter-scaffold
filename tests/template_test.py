@@ -24,7 +24,7 @@ def test_bake_project_default_adapter_name(cookies):
         assert  'dbt' in found_toplevel_files
         assert 'setup.py' in found_toplevel_files
         assert 'tox.ini' in found_toplevel_files
-        assert 'testsF' in found_toplevel_files
+        assert 'tests' in found_toplevel_files
 
 def test_bake_direcotry_name(cookies):
     """bake and test against new words, if passes means its changing values in template"""

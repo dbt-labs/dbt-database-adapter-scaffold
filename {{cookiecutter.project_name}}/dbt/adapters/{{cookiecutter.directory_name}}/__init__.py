@@ -1,4 +1,4 @@
-from dbt.adapters.{{cookiecutter.directory_name}}.connections import {{cookiecutter.adapter_title}}ConnectionManager
+from dbt.adapters.{{cookiecutter.directory_name}}.connections import {{cookiecutter.adapter_title}}ConnectionManager # noqa
 from dbt.adapters.{{cookiecutter.directory_name}}.connections import {{cookiecutter.adapter_title}}Credentials
 from dbt.adapters.{{cookiecutter.directory_name}}.impl import {{cookiecutter.adapter_title}}Adapter
 

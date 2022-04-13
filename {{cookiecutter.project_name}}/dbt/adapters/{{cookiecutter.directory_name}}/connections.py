@@ -1,9 +1,9 @@
 from contextlib import contextmanager
 from dataclasses import dataclass
-import dbt.exceptions
+import dbt.exceptions # noqa
 from dbt.adapters.base import Credentials
 from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
-from dbt.logger import GLOBAL_LOGGER as logger
+from dbt.logger import GLOBAL_LOGGER as logger # noqa
 
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
@@ -11,6 +11,8 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
     Defines database specific credentials that get added to
     profiles.yml to connect to new adapter
     """
+
+
 
     # Add credentials members here, like:
     # host: str

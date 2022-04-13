@@ -40,9 +40,6 @@ def test_bake_deafult_is_sql_adapter(cookies):
         assert result.exit_code == 0
         assert result.exception is None
         assert result.context['is_sql_adapter'] =='true'
-        assert result.context['is_sql_adapter'] != 'false'
-        assert result.context['is_sql_adapter'] != '1'
-        assert result.context['is_sql_adapter'] != '2'
 
 def test_bake_is_sql_adapter_base(cookies):
     '''bake and test is_sql_adapter can register change from true to false'''
@@ -50,7 +47,6 @@ def test_bake_is_sql_adapter_base(cookies):
         assert result.exit_code == 0
         assert result.exception is None
         assert result.context['is_sql_adapter'] == 'false'
-        assert result.context['is_sql_adapter'] != 'true'
 
 def test_bake_author_default(cookies):
     with bake_in_temp_dir(cookies) as result:

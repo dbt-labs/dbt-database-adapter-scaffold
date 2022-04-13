@@ -49,5 +49,6 @@ class TestSnapshotCheckCols{{cookiecutter.adapter_title}}(BaseSnapshotCheckCols)
 class TestSnapshotTimestamp{{cookiecutter.adapter_title}}(BaseSnapshotTimestamp):
     pass
 
+
 class TestBaseAdapterMethod{{cookiecutter.adapter_title}}(BaseAdapterMethod):
     pass

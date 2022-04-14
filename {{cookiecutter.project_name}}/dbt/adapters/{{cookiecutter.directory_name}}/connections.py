@@ -11,10 +11,10 @@ from dbt.logger import GLOBAL_LOGGER as logger
 
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
-    '''
+    """
     Defines database specific credentials that get added to
     profiles.yml to connect to new adapter
-    '''
+    """
 
     # Add credentials members here, like:
     # host: str
@@ -48,7 +48,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
         return ("host","port","username","user")
 
 class {{cookiecutter.adapter_title}}ConnectionManager(connection_cls):
-    TYPE = '{{cookiecutter.directory_name}}'
+    TYPE = "{{cookiecutter.directory_name}}"
 
 
     @contextmanager

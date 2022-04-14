@@ -8,9 +8,9 @@ from dbt.adapters.{{cookiecutter.directory_name}} import {{cookiecutter.adapter_
 
 
 class {{cookiecutter.adapter_title}}Adapter(adapter_cls):
-    '''
+    """
     Controls actual implmentation of adapter, and ability to override certain methods.
-    '''
+    """
 
     ConnectionManager = {{cookiecutter.adapter_title}}ConnectionManager
 

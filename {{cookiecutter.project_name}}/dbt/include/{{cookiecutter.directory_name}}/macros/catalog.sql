@@ -1,8 +1,8 @@
- {{"{{%"}} macro {{cookiecutter.directory_name}}__get_catalog(information_schema, schemas){{ "-%}}" }}
+ {{% macro {{ cookiecutter.directory_name }}__get_catalog(information_schema, schemas)-%}}
 
-   {{"{{%"}}set msg {{ "-%}}" }}
-    get_catalog not implemented for {{cookiecutter.directory_name}}
-   {{ "-%}}" }} endset {{"{{%"}}
+   {{% set msg -%}}
+    get_catalog not implemented for {{ cookiecutter.directory_name }}
+   {%- endset %}
     /*
       Your database likely has a way of accessing metadata about its objects,
       whether by querying an information schema or by running `show` and `describe` commands.
@@ -32,5 +32,5 @@
       define any shortcut keys
     {% endraw %}
     */
-  {{ "{{{{ exceptions.raise_compiler_error(msg) }}}}" }}
- {{"{{%"}} endmacro {{"{{%"}}
+  {{ {{ exceptions.raise_compiler_error(msg) }} }}
+ {% endmacro %}

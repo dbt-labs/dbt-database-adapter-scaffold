@@ -9,7 +9,6 @@ on:
   schedule:
     - cron: "0 5 * * *" # 5 UTC
 
-
 jobs:
 
   tests:

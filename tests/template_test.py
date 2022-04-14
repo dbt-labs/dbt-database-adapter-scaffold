@@ -34,23 +34,19 @@ def test_bake_direcotry_name(cookies):
         assert result.context['directory_name'] == 'myadapter'
         assert result.context['directory_name'] != "hello_world"
 
-def test_bake_deafult_adapter_src(cookies):
-    '''bake and test default version of adapter_src is sql'''
+def test_bake_deafult_is_sql_adapter(cookies):
+    '''bake and test default version of is_sql_adapter is true'''
     with bake_in_temp_dir(cookies) as result:
         assert result.exit_code == 0
         assert result.exception is None
-        assert result.context['adapter_src'] =='sql'
-        assert result.context['adapter_src'] != 'base'
-        assert result.context['adapter_src'] != '1'
-        assert result.context['adapter_src'] != '2'
+        assert result.context['is_sql_adapter'] =='true'
 
-def test_bake_adapter_src_base(cookies):
-    '''bake and test adapter_src can register change from sql to base'''
-    with bake_in_temp_dir(cookies,extra_context={'adapter_src': 'base'}) as result:
+def test_bake_is_sql_adapter_base(cookies):
+    '''bake and test is_sql_adapter can register change from true to false'''
+    with bake_in_temp_dir(cookies,extra_context={'is_sql_adapter': 'false'}) as result:
         assert result.exit_code == 0
         assert result.exception is None
-        assert result.context['adapter_src'] == 'base'
-        assert result.context['adapter_src'] != 'sql'
+        assert result.context['is_sql_adapter'] == 'false'
 
 def test_bake_author_default(cookies):
     with bake_in_temp_dir(cookies) as result:

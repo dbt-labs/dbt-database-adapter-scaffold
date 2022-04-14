@@ -2,8 +2,12 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 import dbt.exceptions # noqa
 from dbt.adapters.base import Credentials
-from dbt.adapters.{{cookiecutter.adapter_src}} import {{cookiecutter.connection_cls}}
-from dbt.logger import GLOBAL_LOGGER as logger # noqa
+{% if cookiecutter.is_sql_adapter == "true" %}
+from dbt.adapters.sql import SQLConnectionManager as connection_cls
+{% else %}
+from dbt.adapters.base import BaseConnectionManager as connection_cls
+{% endif %}
+from dbt.logger import GLOBAL_LOGGER as logger
 
 @dataclass
 class {{cookiecutter.adapter_title}}Credentials(Credentials):
@@ -43,7 +47,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
         """
         return ('host','port','username','user')
 
-class {{cookiecutter.adapter_title}}ConnectionManager({{cookiecutter.connection_cls}}):
+class {{cookiecutter.adapter_title}}ConnectionManager(connection_cls):
     TYPE = '{{cookiecutter.directory_name}}'
 
 

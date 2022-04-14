@@ -32,5 +32,5 @@
       define any shortcut keys
     {% endraw %}
     */
-  {{ {{ exceptions.raise_compiler_error(msg) }} }}
+   {{ exceptions.raise_compiler_error(msg) }}
  {% endmacro %}

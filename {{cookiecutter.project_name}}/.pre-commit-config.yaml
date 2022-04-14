@@ -1,7 +1,8 @@
 # For more on configuring pre-commit hooks (see https://pre-commit.com/)
 
 # TODO: remove global exclusion of tests when testing overhaul is complete
-exclude: '^tests/.*'
+exclude: "^tests/.*"
+
 
 default_language_version:
   python: python3.8
@@ -51,3 +52,4 @@ repos:
     args: [--show-error-codes, --pretty, --ignore-missing-imports]
     files: ^dbt/adapters
     language: system
+

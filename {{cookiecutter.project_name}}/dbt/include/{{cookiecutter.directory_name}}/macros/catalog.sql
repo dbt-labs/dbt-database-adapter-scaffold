@@ -1,12 +1,12 @@
- {{'{{%'}} macro {{cookiecutter.directory_name}}__get_catalog(information_schema, schemas){{ '-%}}' }}
+ {{% macro {{ cookiecutter.directory_name }}__get_catalog(information_schema, schemas)-%}}
 
-   {{'{{%'}}set msg {{ '-%}}' }}
-    get_catalog not implemented for {{cookiecutter.directory_name}}
-   {{ '-%}}' }} endset {{'{{%'}}
+   {{% set msg -%}}
+    get_catalog not implemented for {{ cookiecutter.directory_name }}
+   {%- endset %}
     /*
       Your database likely has a way of accessing metadata about its objects,
-      whether by querying an information schema or by running `show` and `describe` commands. 
-      dbt will use this macro to generate its catalog of objects it knows about. The catalog is one of 
+      whether by querying an information schema or by running `show` and `describe` commands.
+      dbt will use this macro to generate its catalog of objects it knows about. The catalog is one of
       the artifacts powering the documentation site.
       As an example, below is a simplified version of postgres__get_catalog
     */
@@ -15,22 +15,22 @@
     {% raw %}
       select {{database}} as TABLE,
         "- set table type -"
-             when 'v' then 'VIEW'
-              else 'BASE TABLE'
-        "- set table/view names and descriptions -" 
+             when "v" then "VIEW"
+              else "BASE TABLE"
+        "- set table/view names and descriptions -"
 
       use several joins and search types for pulling info together, sorting etc..
 
       where (
         search if schema exists, else build
-          
+
           {%- for schema in schemas -%}
-            upper(sch.nspname) = upper('{{ schema }}'){%- if not loop.last %} or {% endif -%}
+            upper(sch.nspname) = upper("{{ schema }}"){%- if not loop.last %} or {% endif -%}
           {%- endfor -%}
-          
+
       )
       define any shortcut keys
     {% endraw %}
     */
-  {{ '{{{{ exceptions.raise_compiler_error(msg) }}}}' }}
- {{'{{%'}} endmacro {{'{{%'}}
+   {{ exceptions.raise_compiler_error(msg) }}
+ {% endmacro %}

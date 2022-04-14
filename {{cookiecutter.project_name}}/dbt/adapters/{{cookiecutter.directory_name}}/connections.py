@@ -31,7 +31,7 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
     @property
     def type(self):
         """Return name of adapter."""
-        return "{{cookiecutter.directory_name}}"
+        return "{{ cookiecutter.directory_name }}"
 
     @property
     def unique_field(self):
@@ -47,8 +47,8 @@ class {{cookiecutter.adapter_title}}Credentials(Credentials):
         """
         return ("host","port","username","user")
 
-class {{cookiecutter.adapter_title}}ConnectionManager(connection_cls):
-    TYPE = "{{cookiecutter.directory_name}}"
+class {{ cookiecutter.adapter_title }}ConnectionManager(connection_cls):
+    TYPE = "{{ cookiecutter.directory_name }}"
 
 
     @contextmanager

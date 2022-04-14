@@ -14,41 +14,41 @@ from dbt.tests.adapter.basic.test_snapshot_timestamp import BaseSnapshotTimestam
 from dbt.tests.adapter.basic.test_adapter_methods import BaseAdapterMethod
 
 
-class TestSimpleMaterializations{{cookiecutter.adapter_title}}(BaseSimpleMaterializations):
+class TestSimpleMaterializations{{ cookiecutter.adapter_title }}(BaseSimpleMaterializations):
     pass
 
 
-class TestSingularTests{{cookiecutter.adapter_title}}(BaseSingularTests):
+class TestSingularTests{{ cookiecutter.adapter_title }}(BaseSingularTests):
     pass
 
 
-class TestSingularTestsEphemeral{{cookiecutter.adapter_title}}(BaseSingularTestsEphemeral):
+class TestSingularTestsEphemeral{{ cookiecutter.adapter_title }}(BaseSingularTestsEphemeral):
     pass
 
 
-class TestEmpty{{cookiecutter.adapter_title}}(BaseEmpty):
+class TestEmpty{{ cookiecutter.adapter_title }}(BaseEmpty):
     pass
 
 
-class TestEphemeral{{cookiecutter.adapter_title}}(BaseEphemeral):
+class TestEphemeral{{ cookiecutter.adapter_title }}(BaseEphemeral):
     pass
 
 
-class TestIncremental{{cookiecutter.adapter_title}}(BaseIncremental):
+class TestIncremental{{ cookiecutter.adapter_title }}(BaseIncremental):
     pass
 
 
-class TestGenericTests{{cookiecutter.adapter_title}}(BaseGenericTests):
+class TestGenericTests{{ cookiecutter.adapter_title }}(BaseGenericTests):
     pass
 
 
-class TestSnapshotCheckCols{{cookiecutter.adapter_title}}(BaseSnapshotCheckCols):
+class TestSnapshotCheckCols{{ cookiecutter.adapter_title }}(BaseSnapshotCheckCols):
     pass
 
 
-class TestSnapshotTimestamp{{cookiecutter.adapter_title}}(BaseSnapshotTimestamp):
+class TestSnapshotTimestamp{{ cookiecutter.adapter_title }}(BaseSnapshotTimestamp):
     pass
 
 
-class TestBaseAdapterMethod{{cookiecutter.adapter_title}}(BaseAdapterMethod):
+class TestBaseAdapterMethod{{ cookiecutter.adapter_title }}(BaseAdapterMethod):
     pass

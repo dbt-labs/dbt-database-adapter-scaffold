@@ -43,7 +43,7 @@ def test_bake_deafult_is_sql_adapter(cookies):
 
 def test_bake_is_sql_adapter_base(cookies):
     """bake and test is_sql_adapter can register change from true to false"""
-    with bake_in_temp_dir(cookies,extra_context={"is_sql_adapter": "false"}) as result:
+    with bake_in_temp_dir(cookies,extra_context={ "is_sql_adapter": "false" }) as result:
         assert result.exit_code == 0
         assert result.exception is None
         assert result.context["is_sql_adapter"] == "false"
@@ -53,7 +53,7 @@ def test_bake_author_default(cookies):
         assert result.context["author"] == "<INSERT AUTHOR HERE>"
 
 def test_bake_author_change(cookies):
-    with bake_in_temp_dir(cookies,extra_context={"author":"John Doe"}) as result:
+    with bake_in_temp_dir(cookies,extra_context={ "author":"John Doe" }) as result:
         assert result.context["author"] == "John Doe"
         assert result.context["author"] != "JOhn Dooe"
 
@@ -62,7 +62,7 @@ def test_bake_email_default(cookies):
         assert result.context["author_email"] == "<INSERT EMAIL HERE>"
 
 def test_bake_email_change(cookies):
-    with bake_in_temp_dir(cookies,extra_context={"author_email":"John.D@test.com"}) as result:
+    with bake_in_temp_dir(cookies,extra_context={ "author_email":"John.D@test.com" }) as result:
         assert result.context["author_email"] == "John.D@test.com"
         assert result.context["author_email"] != "J@hn.d@test.com"
         regex = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"

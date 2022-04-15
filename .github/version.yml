@@ -1,0 +1,51 @@
+name: Example Workflow for Python Package Info Action
+on: push
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Package Info
+        id: package-info
+        uses: dbt-labs/actions/py-package-info@v1
+        with:
+          package: "dbt-core"
+
+      - name: Use Package Info
+        run: |
+          echo version: ${{ steps.package-info.outputs.version }}
+
+      - name: Parse Semver
+        id: parse-valid
+        uses: dbt-labs/actions/parse-semver@v1
+        with:
+          version: ${{ steps.package-info.outputs.version }}
+
+      - name: Use Parsed Output
+        run: |
+          echo base-version: ${{ steps.parse-valid.outputs.base-version }}
+          echo major: ${{ steps.parse-valid.outputs.major }}
+          echo minor: ${{ steps.parse-valid.outputs.minor }}
+          echo patch: ${{ steps.parse-valid.outputs.patch }}
+
+      - name: Update dbt-core version
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: cookiecutter.json
+          field: dbt_version
+          value: ${{ steps.parse-valid.outputs.base-version }}
+
+      - name: Update dbt-core version
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: cookiecutter.json
+          field: project_version
+          value: ${{ format(
+              '{0}.{1}.0',
+              steps.parse-valid.outputs.major,
+              steps.parse-valid.outputs.minor
+            ) }}
+
+      - run: cat cookiecutter.json
+
+

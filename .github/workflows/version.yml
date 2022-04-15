@@ -1,22 +1,24 @@
-name: Nightly dbt-version check and update.
+# to test locally please add push to the on: workflow selection, normally we will only want to
+# test this nightly so on push isn't needed for that but is for using act locally to later run and check.
+
+name: Check and update dbt version
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron: "0 5 * * *" # 5 UTC
 
 jobs:
-  parse:
+  update-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get Package Info
+      - name: Get Latest Package Info for dbt-core
         id: package-info
         uses: dbt-labs/actions/py-package-info@v1
         with:
           package: "dbt-core"
 
-      - name: Use Package Info
+      - name: dbt-core version
         run: |
           echo version: ${{ steps.package-info.outputs.version }}
 
@@ -26,7 +28,7 @@ jobs:
         with:
           version: ${{ steps.package-info.outputs.version }}
 
-      - name: Use Parsed Output
+      - name: Parsed dbt-core Version
         run: |
           echo base-version: ${{ steps.parse-valid.outputs.base-version }}
           echo major: ${{ steps.parse-valid.outputs.major }}

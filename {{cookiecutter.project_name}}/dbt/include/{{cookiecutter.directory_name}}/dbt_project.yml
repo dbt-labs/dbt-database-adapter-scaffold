@@ -1,5 +1,5 @@
 name: dbt_{{ cookiecutter.directory_name }}
-version: {{cookiecutter.project_version}}
+version: {{ cookiecutter.project_version }}
 config-version: 2
 
 macro-paths: ["macros"]

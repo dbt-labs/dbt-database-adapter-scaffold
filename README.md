@@ -11,12 +11,17 @@ The `dbt-database-adapter-scaffold` package is a user-friendly interactive way t
 
 ## Getting started
 
-#### Local environment setup
+### Local environment setup
+- cd to where you'd like your adapter to live
 - setup a virtual env
 ```
 python3 -m venv env
 ```
--
+- choose how you would like to run the `dbt-database-adapter-scaffold`
+      - Running from Github
+      - Running Locally
+- Once you have generated your adapter please continue by using the `README` located within the repo.
+
 #### Running from Github
 - [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 - run `cookiecutter gh:dbt-labs/dbt-database-adapter-scaffold` in console
@@ -28,15 +33,6 @@ python3 -m venv env
 
 #### Generally
 - read the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter) around building a new adapter and follow helpful tips within generated project to build out your new adapter.
-
-## Testing
-Testing for adapter connection capablilities
-- Please use the `dbt-adapter-tests` these are best for troubleshootting connection and common functionality.
-
-Once your adapter is built out a few options.
-- you can use `dbt debug` to troubleshoot issues with macros
-- [Jaffle_shop](https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
-
 
 ## Join the dbt Community
 

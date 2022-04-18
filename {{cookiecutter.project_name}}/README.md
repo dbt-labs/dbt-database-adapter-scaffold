@@ -14,10 +14,12 @@ This repo contains the base code to help you start to build out your {{ cookiecu
  ## Getting Started
 
  #### Setting up Locally
- - run `pip install dev_requirements.txt`.
- - run `git init`.
- - Connect your lcoal code to a Github repo.
- - cd directory into the `dbt-core` you'd like to be testing against and run `make dev`.
+- run `pip install dev_requirements.txt`.
+- cd directory into the `dbt-core` you'd like to be testing against and run `make dev`.
+
+ #### Connect to Github
+- run `git init`.
+- Connect your lcoal code to a Github repo.
 
  ## Testing
 Testing for adapter connection capablilities

@@ -11,6 +11,12 @@ The `dbt-database-adapter-scaffold` package is a user-friendly interactive way t
 
 ## Getting started
 
+#### Local environment setup
+- setup a virtual env
+```
+python3 -m venv env
+```
+-
 #### Running from Github
 - [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 - run `cookiecutter gh:dbt-labs/dbt-database-adapter-scaffold` in console

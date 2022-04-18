@@ -1,18 +1,21 @@
 {
   "author": "<INSERT AUTHOR HERE>",
   "author_email": "<INSERT EMAIL HERE>",
-  "url":"Insert a URL here if you have one",
+  "url": "Insert a URL here if you have one",
   "adapter_name": "My Adapter",
   "directory_name": "{{ cookiecutter.adapter_name.lower().replace(' ','') }}",
   "project_name": "dbt-{{ cookiecutter.directory_name }}",
   "description": "the {{ cookiecutter.directory_name }} adapter plugin for dbt.",
-  "is_sql_adapter": ["true", "false"],
-  "project_version":"1.0.0",
-  "dbt_version":"1.0.0",
-  "package_name":"dbt-{{ cookiecutter.directory_name }}",
+  "is_sql_adapter": [
+    "true",
+    "false"
+  ],
+  "project_version": "1.0.0",
+  "dbt_version": "1.0.4",
+  "package_name": "dbt-{{ cookiecutter.directory_name }}",
   "_copy_without_render": [
     "**/main.yml",
     "**/adapters.sql",
     "**/catalog.sql"
-]
+  ]
 }

@@ -1,5 +1,4 @@
-# to test locally please add push to the on: workflow selection, normally we will only want to
-# test this nightly so on push isn't needed for that but is for using act locally to later run and check.
+# To test locally with `act` (https://github.com/nektos/act), run `act -W .github/workflows/version.yml --detect-event`
 
 name: Check and update dbt version
 on:

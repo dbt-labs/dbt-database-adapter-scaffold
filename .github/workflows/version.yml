@@ -1,0 +1,72 @@
+# To test locally with `act` (https://github.com/nektos/act), run `act -W .github/workflows/version.yml --detect-event`
+
+name: Check and update dbt version
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *" # 5 UTC
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Latest Package Info for dbt-core
+        id: package-info
+        uses: dbt-labs/actions/py-package-info@v1
+        with:
+          package: "dbt-core"
+
+      - name: dbt-core version
+        run: |
+          echo version: ${{ steps.package-info.outputs.version }}
+
+      - name: Parse Semver
+        id: parse-valid
+        uses: dbt-labs/actions/parse-semver@v1
+        with:
+          version: ${{ steps.package-info.outputs.version }}
+
+      - name: Parsed dbt-core Version
+        run: |
+          echo base-version: ${{ steps.parse-valid.outputs.base-version }}
+          echo major: ${{ steps.parse-valid.outputs.major }}
+          echo minor: ${{ steps.parse-valid.outputs.minor }}
+          echo patch: ${{ steps.parse-valid.outputs.patch }}
+
+      - name: Update dbt-core version
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: cookiecutter.json
+          field: dbt_version
+          value: ${{ steps.parse-valid.outputs.base-version }}
+
+      - name: Update dbt-core version
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: cookiecutter.json
+          field: project_version
+          value: ${{ format(
+            '{0}.{1}.0',
+            steps.parse-valid.outputs.major,
+            steps.parse-valid.outputs.minor
+            ) }}
+
+      - run: cat cookiecutter.json
+
+      - name: Verify Changed files
+        if: ${{ !env.ACT }}
+        uses: tj-actions/verify-changed-files@v9
+        id: verify-changed-files
+        with:
+          files: |
+            cookiecutter.json
+
+      - name: Create pull request
+        if: ${{ !env.ACT && steps.verify-changed-files.outputs.files_changed == 'true' }}
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Bump dbt to ${{ steps.parse-valid.outputs.base-version }}"
+          branch: "bump-dbt/${{ steps.parse-valid.outputs.base-version }}"
+          body: |
+            Updates cookiecutter ref of dbt-core to newest avaliable version.

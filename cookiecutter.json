@@ -1,7 +1,7 @@
 {
   "author": "<INSERT AUTHOR HERE>",
   "author_email": "<INSERT EMAIL HERE>",
-  "url": "Insert a URL here if you have one",
+  "github_url": "If you have already made a github repo to tie the project to place it here, otherwise update in setup.py later.",
   "adapter_name": "My Adapter",
   "directory_name": "{{ cookiecutter.adapter_name.lower().replace(' ','') }}",
   "project_name": "dbt-{{ cookiecutter.directory_name }}",

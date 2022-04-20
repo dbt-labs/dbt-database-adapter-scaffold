@@ -13,7 +13,7 @@ setup(
     long_description=description,
     author="{{ cookiecutter.author }}",
     author_email="{{ cookiecutter.author_email }}",
-    url="{{ cookiecutter.url }}",
+    url="{{ cookiecutter.github_url }}",
     packages=find_namespace_packages(include=["dbt", "dbt.*"]),
     include_package_data=True,
     install_requires=[

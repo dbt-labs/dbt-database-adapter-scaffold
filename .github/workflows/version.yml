@@ -41,7 +41,7 @@ jobs:
           field: dbt_version
           value: ${{ steps.parse-valid.outputs.base-version }}
 
-      - name: Update dbt-core version
+      - name: Update project version
         uses: jossef/action-set-json-field@v1
         with:
           file: cookiecutter.json

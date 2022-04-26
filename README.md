@@ -18,7 +18,7 @@ The `dbt-database-adapter-scaffold` package is a user-friendly interactive way t
 python3 -m venv env
 ```
 - choose how you would like to run the `dbt-database-adapter-scaffold`
-      - Running from Github
+      - Running from Github (recommended)
       - Running Locally
 - Once you have generated your adapter please continue by using the `README` located within the repo.
 
@@ -30,6 +30,16 @@ python3 -m venv env
 - [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 - Fork and clone this repo
 - Once cloned run cookiecutter path_to_this_file/..
+
+ ### Testing
+A suggested process for testing while building out your new adapter might be something like.
+- Firstly focus on getting the connection methods and credentials setup correctly and test basic connection with `dbt debug`
+- Creating a small project to slowly run and test against locally as you build (will really help once you get to building out unit/integration test implementations) ex. [jaffle_shop](https://github.com/dbt-labs/jaffle_shop) is one we have various instructions and tutorials for (Tutorial)(https://docs.getdbt.com/tutorial/setting-up)
+- Work on building up higher-level macros/methods using your small project from step before to test basic adapter functionality by running things like `dbt run` against building views, tables, `dbt test` till you have basic functionality.
+- Start incorporating new more `pytest` testing to check against your basic adapter functionality. At this point your adapter will be feature-complete at baseline level.
+- Share your adapter to get feedback.
+- Continue developing additional features standard to other dbt adapters and adding in more feature based `unit` and `functional` tests or building out adapter specific test functionality/tests.
+
 
 #### Generally
 - read the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter) around building a new adapter and follow helpful tips within generated project to build out your new adapter.

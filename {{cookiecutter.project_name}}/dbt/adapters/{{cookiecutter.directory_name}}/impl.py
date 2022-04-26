@@ -3,16 +3,16 @@ from dbt.adapters.sql import SQLAdapter as adapter_cls
 {% else %}
 from dbt.adapters.base import BaseAdapter as adapter_cls
 {% endif %}
-from dbt.adapters.{{ cookiecutter.directory_name }} import {{ cookiecutter.adapter_title }}ConnectionManager
+from dbt.adapters.{{ cookiecutter.directory_name }} import {{ cookiecutter.adapter_name }}ConnectionManager
 
 
 
-class {{ cookiecutter.adapter_title }}Adapter(adapter_cls):
+class {{ cookiecutter.adapter_name }}Adapter(adapter_cls):
     """
     Controls actual implmentation of adapter, and ability to override certain methods.
     """
 
-    ConnectionManager = {{ cookiecutter.adapter_title }}ConnectionManager
+    ConnectionManager = {{ cookiecutter.adapter_name }}ConnectionManager
 
     @classmethod
     def date_function(cls):

@@ -1,2 +1,2 @@
-{{ cookiecutter.update({ "adapter_upper":cookiecutter.directory_name.upper(),
-"adapter_title":cookiecutter.adapter_name.title().replace(' ',''), }) }}
+{{ cookiecutter.update({ "adapter_upper":cookiecutter.adapter_name.upper(),
+"directory_name":cookiecutter.adapter_name.lower() }) }}

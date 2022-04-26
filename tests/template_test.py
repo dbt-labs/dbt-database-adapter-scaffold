@@ -15,7 +15,7 @@ def test_bake_project_default_adapter_name(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.exit_code == 0
         assert result.exception is None
-        assert result.context["adapter_name"] == "My Adapter"
+        assert result.context["adapter_name"] == "MyAdapter"
         assert result.context["adapter_name"] != "123444"
         assert result.project_path.is_dir()
         # looks for files in generated project

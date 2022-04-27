@@ -34,13 +34,6 @@ jobs:
           echo minor: ${{ steps.parse-valid.outputs.minor }}
           echo patch: ${{ steps.parse-valid.outputs.patch }}
 
-      - name: Update dbt-core version
-        uses: jossef/action-set-json-field@v1
-        with:
-          file: cookiecutter.json
-          field: dbt_version
-          value: ${{ steps.parse-valid.outputs.base-version }}
-
       - name: Update project version
         uses: jossef/action-set-json-field@v1
         with:

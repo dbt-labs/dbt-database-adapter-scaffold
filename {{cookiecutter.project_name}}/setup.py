@@ -17,6 +17,6 @@ setup(
     packages=find_namespace_packages(include=["dbt", "dbt.*"]),
     include_package_data=True,
     install_requires=[
-        "dbt-core~={{ cookiecutter.dbt_version }}.",
+        "dbt-core~={{ cookiecutter.project_version}}.",
     ],
 )

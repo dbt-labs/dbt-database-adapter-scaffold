@@ -10,7 +10,6 @@
     "true",
     "false"
   ],
-  "dbt_version": "1.0.4",
   "project_version": "1.0.0",
   "package_name": "dbt-{{ cookiecutter.directory_name }}",
   "_copy_without_render": [

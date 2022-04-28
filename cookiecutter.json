@@ -11,7 +11,7 @@
     "false"
   ],
   "project_version": "1.0.0",
-  "dbt_version": "1.0.4",
+  "dbt_version": "1.0.6",
   "package_name": "dbt-{{ cookiecutter.directory_name }}",
   "_copy_without_render": [
     "**/main.yml",

@@ -9,6 +9,9 @@ dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-agg
 ## dbt-database-adapter-scaffold
 The `dbt-database-adapter-scaffold` package is a user-friendly interactive way to build out a new adapter.
 
+### Versioning
+`dbt-core` use semver to denote compatibility and intends to maintain compatibility for database adapters of the same major and minor version. (i.e. any patch version for a given major and minor version) This is a convention used by existing plugins that database adapter plugin developers can opt into during project setup. When generating a scaffold, the project version will include the same major and minor version of the latest stable version of `dbt-core`.
+
 ## Getting started
 
 #### Running from Github
@@ -30,7 +33,6 @@ Testing for adapter connection capablilities
 Once your adapter is built out a few options.
 - you can use `dbt debug` to troubleshoot issues with macros
 - [Jaffle_shop](https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
-
 
 ## Join the dbt Community
 

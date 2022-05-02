@@ -13,8 +13,6 @@
   "project_version": "1.0.0",
   "package_name": "dbt-{{ cookiecutter.directory_name }}",
   "_copy_without_render": [
-    "**/main.yml",
-    "**/adapters.sql",
-    "**/catalog.sql"
+    "**/main.yml"
   ]
 }

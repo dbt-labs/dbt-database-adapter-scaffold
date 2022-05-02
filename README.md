@@ -10,7 +10,7 @@ dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-agg
 The `dbt-database-adapter-scaffold` package is a user-friendly interactive way to build out a new adapter.
 
 ### Versioning
-In order to keep new adapters in a parity level with `dbt-core` when you generate your scaffold you will notice that the `project_version` might be something like `M.m.0` where M is equivalant to the latest major release of `dbt-core` and likewise for minor versioning. You can feel free to change these as you see fit. But would suggest that if you do keep the versioning as it while building out the adapter to note how new a software it is in the README.
+`dbt-core` use semver to denote compatibility and intends to maintain compatibility for database adapters of the same major and minor version. (i.e. any patch version for a given major and minor version) This is a convention used by existing plugins that database adapter plugin developers can opt into during project setup. When generating a scaffold, the project version will include the same major and minor version of the latest stable version of `dbt-core`.
 
 ## Getting started
 

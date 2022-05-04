@@ -16,7 +16,6 @@ def test_bake_project_adapter_name(cookies):
         assert result.exit_code == 0
         assert result.exception is None
         assert result.context["adapter_name"] == "MyAdapter"
-        assert result.context["adapter_name"] != "123444"
         assert result.project_path.is_dir()
         # looks for files in generated project
         found_toplevel_files = [f.name for f in result.project_path.glob('*')]
@@ -32,7 +31,6 @@ def test_bake_project_name(cookies):
         assert result.exit_code == 0
         assert result.exception is None
         assert result.context["project_name"] == "dbt-myadapter"
-        assert result.context["project_name"] != "hello_world"
 
 def test_bake_deafult_is_sql_adapter(cookies):
     """bake and test default version of is_sql_adapter is true"""
@@ -55,7 +53,7 @@ def test_bake_author_default(cookies):
 def test_bake_author_change(cookies):
     with bake_in_temp_dir(cookies,extra_context={ "author":"John Doe" }) as result:
         assert result.context["author"] == "John Doe"
-        assert result.context["author"] != "JOhn Dooe"
+
 
 def test_bake_email_default(cookies):
     with bake_in_temp_dir(cookies) as result:

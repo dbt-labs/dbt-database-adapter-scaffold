@@ -21,11 +21,9 @@
       use several joins and search types for pulling info together, sorting etc..
       where (
         search if schema exists, else build
-
           {%- for schema in schemas -%}
             upper(sch.nspname) = upper('{{ schema }}'){%- if not loop.last %} or {% endif -%}
           {%- endfor -%}
-
       )
       define any shortcut keys
     {% endraw %}

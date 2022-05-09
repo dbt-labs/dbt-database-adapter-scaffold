@@ -2,20 +2,15 @@
   "author": "<INSERT AUTHOR HERE>",
   "author_email": "<INSERT EMAIL HERE>",
   "github_url": "If you have already made a github repo to tie the project to place it here, otherwise update in setup.py later.",
-  "adapter_name": "My Adapter",
-  "directory_name": "{{ cookiecutter.adapter_name.lower().replace(' ','') }}",
-  "project_name": "dbt-{{ cookiecutter.directory_name }}",
-  "description": "the {{ cookiecutter.directory_name }} adapter plugin for dbt.",
+  "adapter_name": "What is name of your database in CamelCase? ex. MyAdapter",
+  "project_name": "dbt-{{ cookiecutter.adapter_name.lower() }}",
   "is_sql_adapter": [
     "true",
     "false"
   ],
-  "project_version": "1.0.0",
-  "dbt_version": "1.0.4",
-  "package_name": "dbt-{{ cookiecutter.directory_name }}",
+  "project_version": "1.1.0",
+  "package_name": "dbt-{{ cookiecutter.project_name }}",
   "_copy_without_render": [
-    "**/main.yml",
-    "**/adapters.sql",
-    "**/catalog.sql"
+    "**/main.yml"
   ]
 }

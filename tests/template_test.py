@@ -30,7 +30,7 @@ def test_bake_project_name(cookies):
     with bake_in_temp_dir(cookies, extra_context={ "adapter_name":"MyAdapter" }) as result:
         assert result.exit_code == 0
         assert result.exception is None
-        assert result.context["project_name"] == "dbt-myadapter"
+        assert result.context["project_name"] == "myadapter"
 
 def test_bake_deafult_is_sql_adapter(cookies):
     """bake and test default version of is_sql_adapter is true"""

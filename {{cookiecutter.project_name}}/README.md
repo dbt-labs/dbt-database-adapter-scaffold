@@ -6,14 +6,14 @@ v<p align="center">
 
 dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-aggregate the raw data in your warehouse so that it's ready for analysis.
 
-## {{ cookiecutter.project_name }}
-This repo contains the base code to help you start to build out your {{ cookiecutter.project_name }} adapter plugin, for more information on how to build out the adapter please follow the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter)
+## {{ cookiecutter.adapter_name }}
+This repo contains the base code to help you start to build out your {{ cookiecutter.package_name }} adapter plugin, for more information on how to build out the adapter please follow the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter)
 
 ** Note ** this `README` is meant to be replaced with what information would be required to use your adpater once your at a point todo so.
 
 ** Note **
 ### Adapter Scaffold default Versioning
-This adapter plugin follows [semantic versioning](https://semver.org/). The first version of this plugin is v{{ cookiecutter.project_version }}, in order to be compatible with dbt Core v{{ cookiecutter.dbt_version }}.
+This adapter plugin follows [semantic versioning](https://semver.org/). The first version of this plugin is v{{ cookiecutter.project_version }}, in order to be compatible with dbt Core v{{ cookiecutter.project_version }}.
 
 It's also brand new! For {{ cookiecutter.adapter_name }}-specific functionality, we will aim for backwards-compatibility wherever possible. We are likely to be iterating more quickly than most major-version-1 software projects. To that end, backwards-incompatible changes will be clearly communicated and limited to minor versions (once every three months).
 

@@ -20,7 +20,7 @@ It's also brand new! For {{ cookiecutter.adapter_name }}-specific functionality,
  ## Getting Started
 
  #### Setting up Locally
-- run `pip install -r dev_requirements.txt`.
+- run `pip install -r dev-requirements.txt`.
 - cd directory into the `dbt-core` you'd like to be testing against and run `make dev`.
 
  #### Connect to Github

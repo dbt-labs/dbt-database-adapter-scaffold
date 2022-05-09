@@ -7,7 +7,7 @@ v<p align="center">
 dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-aggregate the raw data in your warehouse so that it's ready for analysis.
 
 ## {{ cookiecutter.adapter_name }}
-This repo contains the base code to help you start to build out your {{ cookiecutter.package_name }} adapter plugin, for more information on how to build out the adapter please follow the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter)
+This repo contains the base code to help you start to build out your {{ cookiecutter.project_name }} adapter plugin, for more information on how to build out the adapter please follow the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter)
 
 ** Note ** this `README` is meant to be replaced with what information would be required to use your adpater once your at a point todo so.
 

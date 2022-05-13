@@ -6,33 +6,33 @@
 
 dbt is the T in ELT. Organize, cleanse, denormalize, filter, rename, and pre-aggregate the raw data in your warehouse so that it's ready for analysis.
 
-## dbt-database-adapter-scaffold
+# dbt-database-adapter-scaffold
 The `dbt-database-adapter-scaffold` package is a user-friendly interactive way to build out a new adapter.
 
-### Versioning
-`dbt-core` use semver to denote compatibility and intends to maintain compatibility for database adapters of the same major and minor version. (i.e. any patch version for a given major and minor version) This is a convention used by existing plugins that database adapter plugin developers can opt into during project setup. When generating a scaffold, the project version will include the same major and minor version of the latest stable version of `dbt-core`.
+> ### :warning: Versioning
+> `dbt-core` use semver to denote compatibility and intends to maintain compatibility for database adapters of the same major and minor version. (i.e. any patch version for a given major and minor version) This is a convention used by existing plugins that database adapter plugin developers can opt into during project setup. When generating a scaffold, the project version will include the same major and minor version of the latest stable version of `dbt-core`.
 
 ## Getting started
 
+### Local environment setup
+- `cd` to where you'd like your adapter to live. the scaffold will create a new folder for your adapter, e.g. `dbt-{myadapter}`. This will be the folder to make into a Git repository
+- setup a virtual env
+    ```
+    python3 -m venv env
+    ```
+- choose how you would like to run the `dbt-database-adapter-scaffold`
+      - [Running from Github](#running-from-github) (recommended)
+      - [Running Locally](#running-locally)
+- Once you have generated your adapter please continue by using the [`README`]({{cookiecutter.project_name}}/README.md) located within the repo.
+
 #### Running from Github
-- [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
+- Install [cookiecutter](https://cookiecutter.readthedocs.io/) with `pip install cookiecutter` ([guide for alt install methods](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html))
 - run `cookiecutter gh:dbt-labs/dbt-database-adapter-scaffold` in console
 
 #### Running Locally
 - [Install cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html)
 - Fork and clone this repo
-- Once cloned run cookiecutter path_to_this_file/..
-
-#### Generally
-- read the [docs](https://docs.getdbt.com/docs/contributing/building-a-new-adapter) around building a new adapter and follow helpful tips within generated project to build out your new adapter.
-
-## Testing
-Testing for adapter connection capablilities
-- Please use the `dbt-adapter-tests` these are best for troubleshootting connection and common functionality.
-
-Once your adapter is built out a few options.
-- you can use `dbt debug` to troubleshoot issues with macros
-- [Jaffle_shop](https://docs.getdbt.com/tutorial/setting-up) is a frinedly beginner project to test adapter compatiablity with dbt functionality.
+- Once cloned run cookiecutter `path_to_this_repo/.`
 
 ## Join the dbt Community
 

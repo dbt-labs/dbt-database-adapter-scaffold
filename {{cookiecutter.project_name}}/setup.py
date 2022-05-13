@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import find_namespace_packages, setup
 
-package_name = "dbt-{{ cookiecutter.directory_name }}"
+package_name = "{{ cookiecutter.project_name}}"
 # make sure this always matches dbt/adapters/{adapter}/__version__.py
 package_version = "{{cookiecutter.project_version}}"
 description = """The {{ cookiecutter.adapter_name }} adapter plugin for dbt"""

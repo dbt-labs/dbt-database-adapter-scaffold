@@ -29,4 +29,4 @@
     {% endraw %}
     */
   {{ '{{{{ exceptions.raise_compiler_error(msg) }}}}' }}
- {{'{{%'}} endmacro {{'{{%'}}
+ {{'{{%'}} endmacro {{'%}}'}}

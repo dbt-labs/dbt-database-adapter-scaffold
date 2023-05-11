@@ -1,3 +1,12 @@
+# **what?**
+# Creates a pull request to update the version to match dbt-core
+#
+# **why?**
+# Kepp the versions in sync
+#
+# **when?**
+# Scheduled for 0500UTC
+#
 # To test locally with `act` (https://github.com/nektos/act), run `act -W .github/workflows/version.yml --detect-event`
 
 name: Check and update dbt version
@@ -9,8 +18,11 @@ on:
 jobs:
   update-version:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out Repo
+        uses: actions/checkout@v3
+
       - name: Get Latest Package Info for dbt-core
         id: package-info
         uses: dbt-labs/actions/py-package-info@v1
@@ -35,7 +47,7 @@ jobs:
           echo patch: ${{ steps.parse-valid.outputs.patch }}
 
       - name: Update project version
-        uses: jossef/action-set-json-field@v1
+        uses: jossef/action-set-json-field@v2
         with:
           file: cookiecutter.json
           field: project_version
@@ -45,11 +57,12 @@ jobs:
             steps.parse-valid.outputs.minor
             ) }}
 
-      - run: cat cookiecutter.json
+      - name: Display cookiecutter.json
+        run: cat cookiecutter.json
 
       - name: Verify Changed files
         if: ${{ !env.ACT }}
-        uses: tj-actions/verify-changed-files@v9
+        uses: tj-actions/verify-changed-files@v14
         id: verify-changed-files
         with:
           files: |
@@ -57,7 +70,7 @@ jobs:
 
       - name: Create pull request
         if: ${{ !env.ACT && steps.verify-changed-files.outputs.files_changed == 'true' }}
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v5
         with:
           title: "Bump dbt to ${{ steps.parse-valid.outputs.base-version }}"
           branch: "bump-dbt/${{ steps.parse-valid.outputs.base-version }}"

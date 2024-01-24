@@ -18,5 +18,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "dbt-core~={{ cookiecutter.project_version}}.",
+        "dbt-common<1.0"
+        "dbt-adapter~=0.1.0a2"
     ],
 )

@@ -1,4 +1,4 @@
 
-cookiecutter~=2.1.1
+cookiecutter~=2.5.0
 pytest_cookies~=0.7.0
 

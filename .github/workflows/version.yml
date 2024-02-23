@@ -28,7 +28,6 @@ jobs:
         uses: dbt-labs/actions/py-package-info
         with:
           package: "dbt-core"
-          python-version: "3.8"
 
       - name: dbt-core version
         run: |

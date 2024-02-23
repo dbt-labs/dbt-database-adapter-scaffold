@@ -35,7 +35,7 @@ jobs:
 
       - name: Parse Semver
         id: parse-valid
-        uses: dbt-labs/actions/parse-semver@v1
+        uses: dbt-labs/actions/parse-semver
         with:
           version: ${{ steps.package-info.outputs.version }}
 

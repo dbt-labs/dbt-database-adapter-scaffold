@@ -25,9 +25,10 @@ jobs:
 
       - name: Get Latest Package Info for dbt-core
         id: package-info
-        uses: dbt-labs/actions/py-package-info@v1
+        uses: dbt-labs/actions/py-package-info
         with:
           package: "dbt-core"
+          python-version: "3.8"
 
       - name: dbt-core version
         run: |
@@ -35,7 +36,7 @@ jobs:
 
       - name: Parse Semver
         id: parse-valid
-        uses: dbt-labs/actions/parse-semver
+        uses: dbt-labs/actions/parse-semver@v1
         with:
           version: ${{ steps.package-info.outputs.version }}
 

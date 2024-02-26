@@ -23,14 +23,9 @@ jobs:
       - name: Check out Repo
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
-
       - name: Get Latest Package Info for dbt-core
         id: package-info
-        uses: dbt-labs/actions/py-package-info@v1
+        uses: dbt-labs/actions/py-package-info
         with:
           package: "dbt-core"
 

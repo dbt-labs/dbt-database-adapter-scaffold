@@ -1,6 +1,6 @@
 from contextlib import contextmanager
 from dataclasses import dataclass
-import dbt.exceptions # noqa
+import dbt.common.exceptions # noqa
 from dbt.adapters.base import Credentials
 {% if cookiecutter.is_sql_adapter == "true" %}
 from dbt.adapters.sql import SQLConnectionManager as connection_cls

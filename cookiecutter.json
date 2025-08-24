@@ -8,7 +8,7 @@
     "true",
     "false"
   ],
-  "project_version": "1.7.0",
+  "project_version": "1.9.0",
   "_copy_without_render": [
     "**/main.yml"
   ]

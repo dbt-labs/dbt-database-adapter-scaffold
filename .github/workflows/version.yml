@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Check out Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744  # actions/checkout@v3
 
       - name: Get Latest Package Info for dbt-core
         id: package-info
@@ -47,7 +47,7 @@ jobs:
           echo patch: ${{ steps.parse-valid.outputs.patch }}
 
       - name: Update project version
-        uses: jossef/action-set-json-field@v2
+        uses: jossef/action-set-json-field@2a0f7d953b580b828717daf4de7fafc7e4135e97  # jossef/action-set-json-field@v2
         with:
           file: cookiecutter.json
           field: project_version
@@ -62,7 +62,7 @@ jobs:
 
       - name: Verify Changed files
         if: ${{ !env.ACT }}
-        uses: tj-actions/verify-changed-files@v14
+        uses: tj-actions/verify-changed-files@7517b838f3a0d51de4b334a61ef1330672118927  # tj-actions/verify-changed-files@v14
         id: verify-changed-files
         with:
           files: |
@@ -70,7 +70,7 @@ jobs:
 
       - name: Create pull request
         if: ${{ !env.ACT && steps.verify-changed-files.outputs.files_changed == 'true' }}
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5  # peter-evans/create-pull-request@v5
         with:
           title: "Bump dbt to ${{ steps.parse-valid.outputs.base-version }}"
           branch: "bump-dbt/${{ steps.parse-valid.outputs.base-version }}"
